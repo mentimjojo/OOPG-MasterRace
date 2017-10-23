@@ -1,6 +1,7 @@
-package nl.han.ica.MasterRace.Maps.Tiles;
+package nl.han.ica.MasterRace.Map.Core;
 
 
+import nl.han.ica.MasterRace.Map.Tiles.TrackTile;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
 
@@ -51,13 +52,13 @@ public class Tiles {
         Sprite track_corner_bottom_left = new Sprite("src/assets/track/track_corner_bottom_left.png");
 
         // Setup tile types
-        TileType<BoardsTile> tile_track_full = new TileType<>(BoardsTile.class, track_full);
-        TileType<BoardsTile> tile_track_straight_left_wall = new TileType<>(BoardsTile.class, track_straight_left_wall);
-        TileType<BoardsTile> tile_track_straight_right_wall = new TileType<>(BoardsTile.class, track_straight_right_wall);
-        TileType<BoardsTile> tile_track_straight_top_wall = new TileType<>(BoardsTile.class, track_straight_top_wall);
-        TileType<BoardsTile> tile_track_straight_bottom_wall = new TileType<>(BoardsTile.class, track_straight_bottom_wall);
-        TileType<BoardsTile> tile_track_corner_bottom_right = new TileType<>(BoardsTile.class, track_corner_bottom_right);
-        TileType<BoardsTile> tile_track_corner_bottom_left = new TileType<>(BoardsTile.class, track_corner_bottom_left);
+        TileType<TrackTile> tile_track_full = new TileType<>(TrackTile.class, track_full);
+        TileType<TrackTile> tile_track_straight_left_wall = new TileType<>(TrackTile.class, track_straight_left_wall);
+        TileType<TrackTile> tile_track_straight_right_wall = new TileType<>(TrackTile.class, track_straight_right_wall);
+        TileType<TrackTile> tile_track_straight_top_wall = new TileType<>(TrackTile.class, track_straight_top_wall);
+        TileType<TrackTile> tile_track_straight_bottom_wall = new TileType<>(TrackTile.class, track_straight_bottom_wall);
+        TileType<TrackTile> tile_track_corner_bottom_right = new TileType<>(TrackTile.class, track_corner_bottom_right);
+        TileType<TrackTile> tile_track_corner_bottom_left = new TileType<>(TrackTile.class, track_corner_bottom_left);
 
         // Add to tiles ArrayList
         this.tiles.add(tile_track_full);

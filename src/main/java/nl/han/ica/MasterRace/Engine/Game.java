@@ -1,24 +1,29 @@
 package nl.han.ica.MasterRace.Engine;
 
-import nl.han.ica.MasterRace.Maps.Desert;
+import nl.han.ica.MasterRace.Map.Levels.Desert;
+import nl.han.ica.MasterRace.Map.Maps;
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
 
 public class Game extends GameEngine {
 
+    // Game static
+    private static Game game;
+
     // View viewport
     private View view;
-    private Desert map;
 
     /**
      * Constructor engine
      */
     public Game(){
+        // Set instance
+        game = this;
         // Set settings
         this.settings();
-        map = new Desert(this);
-        tileMap = map.map;
+        Maps nextMap = new Maps();
+        tileMap = nextMap.getRandomMap();
         // Create view
         this.view = new View(1500, 1500);
         //this.view.setBackground(loadImage("src/main/java/nl/han/ica/MasterRace/Track/background.jpg"));
@@ -41,8 +46,12 @@ public class Game extends GameEngine {
         //view.setupViewPort();
     }
 
-    public TileMap getTileMap(){
-        return tileMap;
+    /**
+     * Get instance game
+     * @return
+     */
+    public static Game getInstance(){
+        return game;
     }
 
     @Override

@@ -1,19 +1,18 @@
-package nl.han.ica.MasterRace.Maps;
+package nl.han.ica.MasterRace.Map.Levels;
 
 import nl.han.ica.MasterRace.Engine.Game;
+import nl.han.ica.MasterRace.Map.Core.Level;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
 
-public class Desert extends Map {
+public class Desert extends Level {
 
     /**
      * Constructor
-     *
-     * @param engine
      */
-    public Desert(Game engine){
+    public Desert(){
         // Load parent class
-        super(engine);
+        super();
         // Set map
         this.setMap();
     }
