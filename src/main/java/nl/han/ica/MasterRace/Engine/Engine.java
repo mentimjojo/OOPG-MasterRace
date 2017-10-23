@@ -18,6 +18,7 @@ public class Engine extends GameEngine {
         // Set settings
         this.settings();
         map = new Map(this);
+        tileMap = map.kutmap;
         // Create view
         this.view = new View(1204, 903);
         this.view.setBackground(loadImage("src/main/java/nl/han/ica/MasterRace/Media/background.jpg"));
