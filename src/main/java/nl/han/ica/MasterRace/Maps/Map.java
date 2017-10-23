@@ -8,11 +8,12 @@ import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
 
 public class Map {
 
-    Engine engine;
+    private Engine engine;
+    public TileMap kutmap;
 
     public Map(Engine engine){
         this.engine = engine;
-
+        kutmap = engine.getTileMap();
         this.initializeTileMap();
     }
 
@@ -21,10 +22,11 @@ public class Map {
      */
     private void initializeTileMap() {
         /* TILES */
-        Sprite boardsSprite = new Sprite("src/main/java/nl/han/ica/MasterRace/Media/boards.jpg");
-        TileType<BoardsTile> boardTileType = new TileType<>(BoardsTile.class, boardsSprite);
+        Sprite Straight = new Sprite("src/main/java/nl/han/ica/MasterRace/Media/straight.PNG");
 
-        TileType[] tileTypes = { boardTileType };
+        TileType<BoardsTile> StraightTileType = new TileType<>(BoardsTile.class, Straight);
+
+        TileType[] tileTypes = { StraightTileType };
         int tileSize=50;
         int tilesMap[][]={
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -34,15 +36,14 @@ public class Map {
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+                {-1,-1,-1,-1,-1,-1,0,-1,-1,-1},
+                {-1,-1,-1,-1,-1,-1, 0,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-                {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-                {-1,-1,-1, 0, 0, 0, 0,-1,0 , 0},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1}
         };
-        TileMap kutmap = engine.getTileMap();
         kutmap = new TileMap(tileSize, tileTypes, tilesMap);
     }
 
