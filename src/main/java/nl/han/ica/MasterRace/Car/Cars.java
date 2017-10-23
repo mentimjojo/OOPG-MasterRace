@@ -76,8 +76,6 @@ public class Cars extends AnimatedSpriteObject implements ICollidableWithTiles {
 
     @Override
     public void tileCollisionOccurred(List<CollidedTile> collidedTiles)  {
-        PVector vector;
-
         for (CollidedTile ct : collidedTiles) {
             if (ct.theTile instanceof EnvironmentTile) {
                     try {
