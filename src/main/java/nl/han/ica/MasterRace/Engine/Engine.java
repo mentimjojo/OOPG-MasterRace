@@ -1,12 +1,15 @@
 package nl.han.ica.MasterRace.Engine;
 
+import nl.han.ica.MasterRace.Maps.Map;
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
-import processing.core.PApplet;
+import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
+import nl.han.ica.OOPDProcessingEngineHAN.View.View;
 
 public class Engine extends GameEngine {
 
     // View viewport
-    View view;
+    private View view;
+    private Map map;
 
     /**
      * Constructor engine
@@ -14,8 +17,11 @@ public class Engine extends GameEngine {
     public Engine(){
         // Set settings
         this.settings();
+        map = new Map(this);
         // Create view
-        this.view = new View(this);
+        this.view = new View(1204, 903);
+        this.view.setBackground(loadImage("src/main/java/nl/han/ica/MasterRace/Media/background.jpg"));
+        setView(this.view);
     }
 
     /**
@@ -29,9 +35,13 @@ public class Engine extends GameEngine {
     @Override
     public void setupGame() {
         // Setup
-        size(1000, 700);
+        size(1204, 903);
         // Set view
         //view.setupViewPort();
+    }
+
+    public TileMap getTileMap(){
+        return tileMap;
     }
 
     @Override
