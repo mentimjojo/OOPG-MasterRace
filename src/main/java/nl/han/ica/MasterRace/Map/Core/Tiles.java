@@ -1,6 +1,6 @@
 package nl.han.ica.MasterRace.Map.Core;
 
-
+import nl.han.ica.MasterRace.Map.Tiles.EnvironmentTile;
 import nl.han.ica.MasterRace.Map.Tiles.TrackTile;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
@@ -27,6 +27,8 @@ public class Tiles {
         this.setupPaths();
         // Setup default track tiles
         this.setupTrack();
+        // Setup default environment
+        this.setupEnvironment();
     }
 
     /**
@@ -36,6 +38,8 @@ public class Tiles {
     private void setupPaths(){
         // Track parts
         assetsPaths.put("trackParts", "src/assets/track");
+        // Environment
+        assetsPaths.put("environment", "src/assets/environment");
     }
 
     /**
@@ -74,6 +78,20 @@ public class Tiles {
         this.tiles.add(tile_track_corner_bottom_left);
         this.tiles.add(tile_track_corner_top_left);
         this.tiles.add(tile_track_corner_top_right);
+    }
+
+    /**
+     * Setup environment
+     */
+    private void setupEnvironment(){
+        // First setup all default environment parts
+        Sprite water_full = new Sprite(this.assetsPaths.get("environment") + "/water_full.png");
+
+        // Setup tile types
+        TileType<EnvironmentTile> tile_water_full = new TileType<>(EnvironmentTile.class, water_full);
+
+        // Add to tiles ArrayList
+        this.tiles.add(tile_water_full);
     }
 
 }

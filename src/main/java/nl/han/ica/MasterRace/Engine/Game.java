@@ -1,9 +1,7 @@
 package nl.han.ica.MasterRace.Engine;
 
-import nl.han.ica.MasterRace.Map.Levels.Desert;
 import nl.han.ica.MasterRace.Map.Maps;
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
-import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
 
 public class Game extends GameEngine {
