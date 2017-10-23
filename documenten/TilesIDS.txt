@@ -1,0 +1,7 @@
+0 = track full
+1 = track straight left wall
+2 = track straight right wall
+3 = track straight top wall
+4 = track straight bottom wall
+5 = track corner bottom right
+6 = track corner bottom left

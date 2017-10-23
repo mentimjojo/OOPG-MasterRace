@@ -21,7 +21,7 @@ public class Game extends GameEngine {
         tileMap = map.map;
         // Create view
         this.view = new View(1500, 1500);
-        //this.view.setBackground(loadImage("src/main/java/nl/han/ica/MasterRace/Media/background.jpg"));
+        //this.view.setBackground(loadImage("src/main/java/nl/han/ica/MasterRace/Track/background.jpg"));
         setView(this.view);
     }
 
