@@ -7,7 +7,6 @@ import nl.han.ica.OOPDProcessingEngineHAN.Collision.ICollidableWithTiles;
 import nl.han.ica.OOPDProcessingEngineHAN.Exceptions.TileNotFoundException;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.AnimatedSpriteObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
-import processing.core.PVector;
 
 import java.util.List;
 
@@ -67,9 +66,6 @@ public class Cars extends AnimatedSpriteObject implements ICollidableWithTiles {
         }
         if (keyCode == world.DOWN) {
             setDirectionSpeed(180, speed);
-        }
-        if (key == ' ') {
-            System.out.println("Spatie!");
         }
     }
 
