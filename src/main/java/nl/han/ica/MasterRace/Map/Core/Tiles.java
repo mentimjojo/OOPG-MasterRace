@@ -17,7 +17,7 @@ public class Tiles {
     protected ArrayList<TileType> tiles = new ArrayList<>();
 
     // Tile size
-    protected final int tileSize = 100;
+    protected final int tileSize = 70;
 
     /**
      * Constructor tiles

@@ -1,6 +1,6 @@
 package nl.han.ica.MasterRace.Map.Core;
 
-import nl.han.ica.MasterRace.Engine.Game;
+import nl.han.ica.MasterRace.Game;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 
 public abstract class Level extends Tiles {

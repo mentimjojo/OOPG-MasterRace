@@ -1,6 +1,6 @@
 package nl.han.ica.MasterRace.Map;
 
-import nl.han.ica.MasterRace.Map.Levels.Desert;
+import nl.han.ica.MasterRace.Map.Levels.Water;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 
 import java.util.HashMap;
@@ -26,12 +26,12 @@ public class Maps {
      */
     private void setupMaps(){
         // Add desert
-        this.levels.put("Desert", new Desert().getMap());
+        this.levels.put("Water", new Water().getMap());
     }
 
     /**
      * Get specific map
-     * @param levelName
+     * @param levelName name of the level
      * @return TileMap
      */
     public TileMap getSpecificMap(String levelName){
