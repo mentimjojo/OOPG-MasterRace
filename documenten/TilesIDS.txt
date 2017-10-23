@@ -3,5 +3,7 @@
 2 = track straight right wall
 3 = track straight top wall
 4 = track straight bottom wall
-5 = track corner bottom right
-6 = track corner bottom left
+5 = track corner bottom right wall
+6 = track corner bottom left wall
+7 = track corner top left wall
+8 = track corner top right wall

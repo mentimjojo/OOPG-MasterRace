@@ -43,13 +43,15 @@ public class Tiles {
      */
     private void setupTrack(){
         // First setup all default track parts
-        Sprite track_full = new Sprite("src/assets/track/track.png");
-        Sprite track_straight_left_wall = new Sprite("src/assets/track/track_straight_left.png");
-        Sprite track_straight_right_wall = new Sprite("src/assets/track/track_straight_right.png");
-        Sprite track_straight_top_wall = new Sprite("src/assets/track/track_straight_top.png");
-        Sprite track_straight_bottom_wall = new Sprite("src/assets/track/track_corner_bottom_straight.png");
-        Sprite track_corner_bottom_right = new Sprite("src/assets/track/track_corner_bottom_right.png");
-        Sprite track_corner_bottom_left = new Sprite("src/assets/track/track_corner_bottom_left.png");
+        Sprite track_full = new Sprite(this.assetsPaths.get("trackParts") + "/track.png");
+        Sprite track_straight_left_wall = new Sprite(this.assetsPaths.get("trackParts") + "/track_straight_left.png");
+        Sprite track_straight_right_wall = new Sprite(this.assetsPaths.get("trackParts") + "/track_straight_right.png");
+        Sprite track_straight_top_wall = new Sprite(this.assetsPaths.get("trackParts") + "/track_straight_top.png");
+        Sprite track_straight_bottom_wall = new Sprite(this.assetsPaths.get("trackParts") + "/track_corner_bottom_straight.png");
+        Sprite track_corner_bottom_right = new Sprite(this.assetsPaths.get("trackParts") + "/track_corner_bottom_right.png");
+        Sprite track_corner_bottom_left = new Sprite(this.assetsPaths.get("trackParts") + "/track_corner_bottom_left.png");
+        Sprite track_corner_top_left = new Sprite(this.assetsPaths.get("trackParts") + "/track_corner_top_left.png");
+        Sprite track_corner_top_right = new Sprite(this.assetsPaths.get("trackParts") + "/track_corner_top_right.png");
 
         // Setup tile types
         TileType<TrackTile> tile_track_full = new TileType<>(TrackTile.class, track_full);
@@ -59,6 +61,8 @@ public class Tiles {
         TileType<TrackTile> tile_track_straight_bottom_wall = new TileType<>(TrackTile.class, track_straight_bottom_wall);
         TileType<TrackTile> tile_track_corner_bottom_right = new TileType<>(TrackTile.class, track_corner_bottom_right);
         TileType<TrackTile> tile_track_corner_bottom_left = new TileType<>(TrackTile.class, track_corner_bottom_left);
+        TileType<TrackTile> tile_track_corner_top_left = new TileType<>(TrackTile.class, track_corner_top_left);
+        TileType<TrackTile> tile_track_corner_top_right = new TileType<>(TrackTile.class, track_corner_top_right);
 
         // Add to tiles ArrayList
         this.tiles.add(tile_track_full);
@@ -68,6 +72,8 @@ public class Tiles {
         this.tiles.add(tile_track_straight_bottom_wall);
         this.tiles.add(tile_track_corner_bottom_right);
         this.tiles.add(tile_track_corner_bottom_left);
+        this.tiles.add(tile_track_corner_top_left);
+        this.tiles.add(tile_track_corner_top_right);
     }
 
 }

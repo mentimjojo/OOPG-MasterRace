@@ -22,6 +22,7 @@ public class Game extends GameEngine {
         game = this;
         // Set settings
         this.settings();
+        // Map
         Maps nextMap = new Maps();
         tileMap = nextMap.getRandomMap();
         // Create view
