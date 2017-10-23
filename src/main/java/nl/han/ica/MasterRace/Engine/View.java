@@ -4,7 +4,7 @@ import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 
 public class View {
 
-    // Engine game
+    // Game game
     GameEngine engine;
 
     // Game View

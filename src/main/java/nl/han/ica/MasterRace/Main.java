@@ -1,6 +1,6 @@
 package nl.han.ica.MasterRace;
 
-import nl.han.ica.MasterRace.Engine.Engine;
+import nl.han.ica.MasterRace.Engine.Game;
 import processing.core.PApplet;
 
 public class Main {
@@ -12,8 +12,8 @@ public class Main {
      */
     public static void main(String[] args){
         // This
-        PApplet.main(new String[]{Engine.class.getName()});
+        PApplet.main(new String[]{Game.class.getName()});
         // Create engine
-        new Engine();
+        new Game();
     }
 }
