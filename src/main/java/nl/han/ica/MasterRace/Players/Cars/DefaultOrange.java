@@ -2,6 +2,7 @@ package nl.han.ica.MasterRace.Players.Cars;
 
 import nl.han.ica.MasterRace.Game;
 import nl.han.ica.MasterRace.Players.Core.Car;
+import nl.han.ica.MasterRace.Players.Core.Keys;
 
 /**
  * Get default blue
@@ -18,21 +19,40 @@ public class DefaultOrange extends Car {
     }
 
     @Override
-    public void keyPressed(int keyCode, char key) {
-        final int speed = 3;
-        if (key == 'a') {
-            setDirectionSpeed(270, speed);
-            setCurrentFrameIndex(0);
+    public void update() {
+        // Car not out of bound(walls)
+        if (getX()<=0) {
+            setxSpeed(0);
+            setX(0);
         }
-        if (key == 'w') {
-            setDirectionSpeed(0, speed);
+        if (getY()<=0) {
+            setySpeed(0);
+            setY(0);
         }
-        if (key == 'd') {
-            System.out.println(getDirection());
-            setDirectionSpeed(90, speed);
+        if (getX()>=this.game.getWidth()-size) {
+            setxSpeed(0);
+            setX(this.game.getWidth() - size);
         }
-        if (key == 's') {
-            setDirectionSpeed(180, speed);
+        if (getY()>=this.game.getHeight()-size) {
+            setySpeed(0);
+            setY(this.game.getHeight() - size);
+        }
+
+        // Pressed key
+        final int speed = 2;
+        for(Keys pressedKey : this.keysToPress) {
+            if (pressedKey.getKey() == 'a' && pressedKey.getPressed()) {
+                setDirectionSpeed(270, speed);
+            }
+            if (pressedKey.getKey() == 'w' && pressedKey.getPressed()) {
+                setDirectionSpeed(0, speed);
+            }
+            if (pressedKey.getKey() == 'd' && pressedKey.getPressed()) {
+                setDirectionSpeed(90, speed);
+            }
+            if (pressedKey.getKey() == 's' && pressedKey.getPressed()) {
+                setDirectionSpeed(180, speed);
+            }
         }
     }
 }

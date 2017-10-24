@@ -32,6 +32,8 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
      */
     protected int size = 50;
 
+    protected ArrayList<Keys> keysToPress = new ArrayList<>();
+
     /**
      * Car constructor
      * @param instanceGame
@@ -41,39 +43,66 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
         super(new Sprite("src/assets/cars/" + carPng), 1);
         // Set instance game
         this.game = instanceGame;
+        // Add default press keys
+        this.addKeys();
+    }
+
+    /**
+     * Add keys
+     */
+    private void addKeys(){
+        // Keys on board
+        this.keysToPress.add(new Keys('a', 0));
+        this.keysToPress.add(new Keys('w', 0));
+        this.keysToPress.add(new Keys('s', 0));
+        this.keysToPress.add(new Keys('d', 0));
+
+        // Arrows, left, top, right, bottom
+        this.keysToPress.add(new Keys('0', 37));
+        this.keysToPress.add(new Keys('0', 38));
+        this.keysToPress.add(new Keys('0', 39));
+        this.keysToPress.add(new Keys('0', 40));
     }
 
     /**
      * Update car
      */
     @Override
-    public void update() {
-        // Car not out of bound(walls)
-        if (getX()<=0) {
-            setxSpeed(0);
-            setX(0);
-        }
-        if (getY()<=0) {
-            setySpeed(0);
-            setY(0);
-        }
-        if (getX()>=this.game.getWidth()-size) {
-            setxSpeed(0);
-            setX(this.game.getWidth() - size);
-        }
-        if (getY()>=this.game.getHeight()-size) {
-            setySpeed(0);
-            setY(this.game.getHeight() - size);
-        }
-    }
+    public abstract void update();
 
     /**
-     * Controlling the caar
+     * Controlling the car
      * @param keyCode keycode
      * @param key the key
      */
     @Override
-    public abstract void keyPressed(int keyCode, char key);
+    public void keyPressed(int keyCode, char key) {
+        for(Keys pressedKey : this.keysToPress){
+            if(key == pressedKey.getKey()){
+                pressedKey.setPressed(true);
+            }
+            if(keyCode == pressedKey.getKeyCode()){
+                pressedKey.setPressed(true);
+            }
+        }
+    }
+
+    /**
+     * Key released
+     * @param keyCode the key code
+     * @param key the key
+     */
+    @Override
+    public void keyReleased(int keyCode, char key) {
+        for(Keys pressedKey : this.keysToPress){
+            if(key == pressedKey.getKey()){
+                pressedKey.setPressed(false);
+            }
+            if(keyCode == pressedKey.getKeyCode()){
+                pressedKey.setPressed(false);
+            }
+        }
+    }
 
     /**
      * Test on environment tiles
