@@ -1,4 +1,5 @@
 package nl.han.ica.MasterRace;
+
 import nl.han.ica.MasterRace.Map.Maps;
 import nl.han.ica.MasterRace.Players.Cars.DefaultBlue;
 import nl.han.ica.MasterRace.Players.Cars.DefaultOrange;
@@ -7,6 +8,11 @@ import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
 import processing.core.PApplet;
 
+/**
+ * Main class
+ * @author T.Nijborg
+ * @version 0.2
+ */
 public class Game extends GameEngine {
 
     /**

@@ -4,8 +4,6 @@ import nl.han.ica.MasterRace.Game;
 import nl.han.ica.MasterRace.Players.Core.Car;
 import nl.han.ica.MasterRace.Players.Core.Keys;
 
-import java.security.Key;
-
 /**
  * Get default blue
  * @author T.Nijborg
