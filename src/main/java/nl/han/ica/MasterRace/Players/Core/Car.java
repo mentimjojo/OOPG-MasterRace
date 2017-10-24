@@ -16,8 +16,11 @@ import java.util.List;
  * Car class
  * @author T.Nijborg
  * @version 0.1
+ *
+ * TODO: Add location to spawn car after dead / outside map
  */
 public abstract class Car extends AnimatedSpriteObject implements ICollidableWithTiles {
+
 
     /**
      * Protected game instance
@@ -41,10 +44,11 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
     }
 
     /**
-     * Update car so don't go out of map
+     * Update car
      */
     @Override
     public void update() {
+        // Car not out of bound(walls)
         if (getX()<=0) {
             setxSpeed(0);
             setX(0);
@@ -65,15 +69,15 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
 
     /**
      * Controlling the caar
-     * @param keyCode
-     * @param key
+     * @param keyCode keycode
+     * @param key the key
      */
     @Override
     public abstract void keyPressed(int keyCode, char key);
 
     /**
      * Test on environment tiles
-     * @param collidedTiles
+     * @param collidedTiles the tile that collided
      */
     @Override
     public void tileCollisionOccurred(List<CollidedTile> collidedTiles) {

@@ -10,11 +10,6 @@ import processing.core.PApplet;
 public class Game extends GameEngine {
 
     /**
-     * Game instance
-     */
-    private static Game game;
-
-    /**
      * FPS counter
      */
     FPSCounter fps = new FPSCounter(150, 150);
@@ -42,8 +37,6 @@ public class Game extends GameEngine {
         this.view();
         // Get cars
         this.createCars();
-        // Set instance
-        game = this;
     }
 
     /**
@@ -81,13 +74,5 @@ public class Game extends GameEngine {
     @Override
     public void update() {
         fps.draw(this.g);
-    }
-
-    /**
-     * Get instance game
-     * @return
-     */
-    public static Game getInstance(){
-        return game;
     }
 }

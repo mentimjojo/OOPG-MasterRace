@@ -1,6 +1,5 @@
 package nl.han.ica.MasterRace.Map.Core;
 
-import nl.han.ica.MasterRace.Game;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 
 /**
@@ -10,8 +9,7 @@ import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
  */
 public abstract class Level extends Tiles {
 
-    // Get the engine
-    protected Game engine;
+    // TileMap map
     protected TileMap map;
 
     /**
@@ -20,8 +18,6 @@ public abstract class Level extends Tiles {
     public Level(){
         // Run Tiles
         super();
-        // Set engine
-        this.engine = Game.getInstance();
     }
 
     /**
