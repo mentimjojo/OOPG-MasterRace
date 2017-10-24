@@ -1,7 +1,7 @@
 package nl.han.ica.MasterRace;
-
-import nl.han.ica.MasterRace.Car.Cars;
 import nl.han.ica.MasterRace.Map.Maps;
+import nl.han.ica.MasterRace.Players.Cars.DefaultBlue;
+import nl.han.ica.MasterRace.Players.Cars.DefaultOrange;
 import nl.han.ica.OOPDProcessingEngineHAN.Dashboard.FPSCounter;
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
@@ -9,11 +9,14 @@ import processing.core.PApplet;
 
 public class Game extends GameEngine {
 
-    // Game static
+    /**
+     * Game instance
+     */
     private static Game game;
 
-
-    Cars cars = new Cars(this);
+    /**
+     * FPS counter
+     */
     FPSCounter fps = new FPSCounter(150, 150);
 
     /**
@@ -29,31 +32,47 @@ public class Game extends GameEngine {
      */
     @Override
     public void setupGame() {
-        // Set instance
-        game = this;
         // Set settings
         this.settings();
         // Map
         Maps nextMap = new Maps();
+        // Get a random map
         tileMap = nextMap.getRandomMap();
         // Create view
-        View view = new View(1400, 700);
-        setView(view);
-        // Setup
-        size(1400, 700);
+        this.view();
+        // Get cars
         this.createCars();
+        // Set instance
+        game = this;
     }
 
     /**
-     * Settings
+     * Create view
+     */
+    private void view(){
+        // Create view
+        View view = new View(1400, 700);
+        // set view
+        setView(view);
+        // Set size
+        size(1400, 700);
+    }
+
+    /**
+     * Settingss
      */
     private void settings(){
         // Set FTP
         this.setGameSpeed(144);
     }
 
+    /**
+     * Create cars
+     */
     private void createCars(){
-        addGameObject(cars, 100, 100);
+        //addGameObject(cars, 100, 100);
+        addGameObject(new DefaultBlue(this), 50, 50);
+        addGameObject(new DefaultOrange(this), 100, 100);
     }
 
     /**
