@@ -6,6 +6,11 @@ import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 import java.util.HashMap;
 import java.util.Random;
 
+/**
+ * The Maps builder
+ * @author T.Nijborg
+ * @version 0.1
+ */
 public class Maps {
 
     /**

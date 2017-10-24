@@ -4,6 +4,11 @@ import nl.han.ica.MasterRace.Map.Core.Level;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
 
+/**
+ * The Water Level
+ * @author T.Nijborg
+ * @version 0.1
+ */
 public class Water extends Level {
 
     /**

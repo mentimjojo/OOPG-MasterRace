@@ -8,6 +8,11 @@ import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * The default tiles
+ * @author T.Nijborg
+ * @version 0.1
+ */
 public class Tiles {
 
     // HashMap assets paths
