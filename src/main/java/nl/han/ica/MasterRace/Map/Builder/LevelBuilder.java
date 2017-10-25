@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 
 /**
- * OldLevel builder
+ * Level builder
  *
  * @author T.Nijborg
  * @version 0.1
