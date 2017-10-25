@@ -30,6 +30,9 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
      */
     protected int size = 50;
 
+    /**
+     * Keys to press
+     */
     protected ArrayList<Keys> keysToPress = new ArrayList<>();
 
     /**
