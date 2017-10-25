@@ -40,6 +40,7 @@ public class Game extends GameEngine {
      */
     @Override
     public void setupGame() {
+        System.out.println("Test");
         // Set settings
         this.settings();
         // Get a random map

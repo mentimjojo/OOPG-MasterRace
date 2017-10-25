@@ -1,5 +1,6 @@
 package nl.han.ica.MasterRace.Map;
 
+import nl.han.ica.MasterRace.Map.Builder.LevelBuilder;
 import nl.han.ica.MasterRace.Map.Core.Level;
 import nl.han.ica.MasterRace.Map.Levels.Dessert;
 import nl.han.ica.MasterRace.Map.Levels.Water;
@@ -26,6 +27,8 @@ public class Maps {
      * Constructor Maps
      */
     public Maps(){
+        // Load level builder
+        new LevelBuilder();
         // Setup maps
         this.setupMaps();
     }
