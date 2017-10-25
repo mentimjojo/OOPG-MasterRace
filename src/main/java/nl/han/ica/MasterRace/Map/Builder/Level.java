@@ -59,7 +59,7 @@ public class Level extends TileBuilder {
      * @param x the x position
      * @param y the y position
      */
-    protected void setPlayerSpawnPosition(String player, float x, float y){
+    public void setPlayerSpawnPosition(String player, float x, float y){
         // Array list coordinates
         ArrayList<Float> positions = new ArrayList<>();
         // Add coordinates
