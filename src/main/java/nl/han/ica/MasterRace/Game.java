@@ -74,6 +74,7 @@ public class Game extends GameEngine {
      * Create cars
      */
     private void createCars(){
+        System.out.println(selectedMap.getPlayerSpawnPosition("player_1").get(0));
         addGameObject(new DefaultBlue(this), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(1));
         addGameObject(new DefaultOrange(this), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(1));
     }

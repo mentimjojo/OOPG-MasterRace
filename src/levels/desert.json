@@ -13,7 +13,7 @@
     [0,0,0,0,0,0,10,10,10,10,10,10,10,10,10,10,0,0,0,0]
   ],
   "playerSpawnPositions": [
-    { "name": "player_1", "positions":[50, 50] },
-    { "name": "player_2", "positions":[100, 100] }
+    { "name": "player_1", "positions":[5, 5] },
+    { "name": "player_2", "positions":[75, 5] }
   ]
 }
