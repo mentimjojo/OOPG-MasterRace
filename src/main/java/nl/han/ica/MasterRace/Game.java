@@ -1,6 +1,6 @@
 package nl.han.ica.MasterRace;
 
-import nl.han.ica.MasterRace.Map.Core.Level;
+import nl.han.ica.MasterRace.Map.Builder.Level;
 import nl.han.ica.MasterRace.Map.Maps;
 import nl.han.ica.MasterRace.Players.Cars.DefaultBlue;
 import nl.han.ica.MasterRace.Players.Cars.DefaultOrange;
@@ -40,7 +40,6 @@ public class Game extends GameEngine {
      */
     @Override
     public void setupGame() {
-        System.out.println("Test");
         // Set settings
         this.settings();
         // Get a random map
@@ -75,8 +74,8 @@ public class Game extends GameEngine {
      * Create cars
      */
     private void createCars(){
-        addGameObject(new DefaultBlue(this), (Float) selectedMap.getPlayerSpawnPosition("p1").get(0), (Float) selectedMap.getPlayerSpawnPosition("p1").get(1));
-        addGameObject(new DefaultOrange(this), (Float) selectedMap.getPlayerSpawnPosition("p2").get(0), (Float) selectedMap.getPlayerSpawnPosition("p2").get(1));
+        addGameObject(new DefaultBlue(this), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(1));
+        addGameObject(new DefaultOrange(this), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(1));
     }
 
     /**

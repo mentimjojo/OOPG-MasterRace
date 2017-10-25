@@ -20,7 +20,6 @@ public class DefaultBlue extends Car {
 
     @Override
     public void update() {
-        System.out.println("Test");
         // Car not out of bound(walls)
         if (getX()<=0) {
             setxSpeed(0);

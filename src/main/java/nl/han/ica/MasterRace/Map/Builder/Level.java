@@ -1,6 +1,7 @@
-package nl.han.ica.MasterRace.Map.Core;
+package nl.han.ica.MasterRace.Map.Builder;
 
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
+import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +11,7 @@ import java.util.HashMap;
  * @author T.Nijborg
  * @version 0.1
  */
-public abstract class Level extends Tiles {
+public class Level extends TileBuilder {
 
     // TileMap map
     protected TileMap map;
@@ -22,7 +23,7 @@ public abstract class Level extends Tiles {
      * Give Game to level builder
      */
     public Level(){
-        // Run Tiles
+        // Run TileBuilder
         super();
     }
 
@@ -47,7 +48,10 @@ public abstract class Level extends Tiles {
     /**
      * Set MAP
      */
-    public abstract void setMap();
+    public void setMap(int[][] tileMap){
+        // Create new tilemap
+        this.map = new TileMap(this.tileSize, this.tiles.toArray(new TileType[tiles.size()]), tileMap);
+    }
 
     /**
      * Set player spawn position
@@ -56,9 +60,9 @@ public abstract class Level extends Tiles {
      * @param y the y position
      */
     protected void setPlayerSpawnPosition(String player, float x, float y){
-        // Array list coords
+        // Array list coordinates
         ArrayList<Float> positions = new ArrayList<>();
-        // Add coords
+        // Add coordinates
         positions.add(x);
         positions.add(y);
         // Add player spawn position

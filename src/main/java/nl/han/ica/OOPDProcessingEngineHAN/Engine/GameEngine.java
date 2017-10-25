@@ -553,7 +553,7 @@ public abstract class GameEngine extends PApplet {
     }
 
     /**
-     * The CollidingHelper can calculate collision detection with GameObjects and Tiles.
+     * The CollidingHelper can calculate collision detection with GameObjects and TileBuilder.
      */
     private static class CollidingHelper {
 
@@ -597,7 +597,7 @@ public abstract class GameEngine extends PApplet {
         }
 
         /**
-         * Method that checks if a GameObject has a collision with Tiles.
+         * Method that checks if a GameObject has a collision with TileBuilder.
          * @param gameObject, allGameObjects
          * @return Vector<GameObject>
          */

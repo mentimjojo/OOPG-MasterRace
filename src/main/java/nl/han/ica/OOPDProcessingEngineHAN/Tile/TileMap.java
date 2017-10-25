@@ -7,7 +7,7 @@ import processing.core.PImage;
 import processing.core.PVector;
 
 /**
- * This class contains the map of Tiles which will be drawn within the game.
+ * This class contains the map of TileBuilder which will be drawn within the game.
  */
 public class TileMap {
 
@@ -22,7 +22,7 @@ public class TileMap {
      * Create a new TileMap.
      * @param tileSize The size the tiles will be.
      * @param tileTypes The Array with factory's which will be creating the different types of tiles.
-     * @param indexMap The Level consisting of tileType indexes which will be used to create and draw the Level.
+     * @param indexMap The OldLevel consisting of tileType indexes which will be used to create and draw the OldLevel.
      */
     public TileMap(int tileSize, TileType[] tileTypes, int[][] indexMap) {
         this.tileSize = tileSize;
@@ -40,7 +40,7 @@ public class TileMap {
 
     /**
      * Gets the tile size of the tiles inside the TileMap.
-     * @return The size of the tiles in the Level.
+     * @return The size of the tiles in the OldLevel.
      */
     public int getTileSize() {
         return tileSize;
@@ -72,7 +72,7 @@ public class TileMap {
 
     /**
      * Gets the map height.
-     * @return the Height in pixels of the first column of tiles in the Level
+     * @return the Height in pixels of the first column of tiles in the OldLevel
      */
     public int getMapHeight() {
         return indexMap.length * tileSize;

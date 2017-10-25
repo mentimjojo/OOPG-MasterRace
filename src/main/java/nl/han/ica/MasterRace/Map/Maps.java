@@ -1,13 +1,7 @@
 package nl.han.ica.MasterRace.Map;
 
+import nl.han.ica.MasterRace.Map.Builder.Level;
 import nl.han.ica.MasterRace.Map.Builder.LevelBuilder;
-import nl.han.ica.MasterRace.Map.Core.Level;
-import nl.han.ica.MasterRace.Map.Levels.Dessert;
-import nl.han.ica.MasterRace.Map.Levels.Water;
-import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
-
-import javax.sound.sampled.LineEvent;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -19,28 +13,21 @@ import java.util.Random;
 public class Maps {
 
     /**
+     * OldLevel builder
+     */
+    private LevelBuilder builder = new LevelBuilder();
+
+    /**
      * All Maps saved
      */
-    private HashMap<String, Level> levels = new HashMap<>();
+    private HashMap<String, Level> levels;
 
     /**
      * Constructor Maps
      */
     public Maps(){
-        // Load level builder
-        new LevelBuilder();
-        // Setup maps
-        this.setupMaps();
-    }
-
-    /**
-     * Setup maps
-     */
-    private void setupMaps(){
-        // Add Water
-        this.levels.put("Water", new Water());
-        // Add dessert map
-        this.levels.put("Dessert", new Dessert());
+        // Get builded levels
+        this.levels = builder.getBuildedLevels();
     }
 
     /**

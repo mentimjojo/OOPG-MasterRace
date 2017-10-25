@@ -1,4 +1,4 @@
-package nl.han.ica.MasterRace.Map.Core;
+package nl.han.ica.MasterRace.Map.Builder;
 
 import nl.han.ica.MasterRace.Map.Tiles.EnvironmentTile;
 import nl.han.ica.MasterRace.Map.Tiles.TrackTile;
@@ -13,7 +13,7 @@ import java.util.HashMap;
  * @author T.Nijborg
  * @version 0.1
  */
-public class Tiles {
+public class TileBuilder {
 
     // HashMap assets paths
     protected HashMap<String, String> assetsPaths = new HashMap<>();
@@ -27,7 +27,7 @@ public class Tiles {
     /**
      * Constructor tiles
      */
-    public Tiles(){
+    public TileBuilder(){
         // Setup paths
         this.setupPaths();
         // Setup default track tiles
