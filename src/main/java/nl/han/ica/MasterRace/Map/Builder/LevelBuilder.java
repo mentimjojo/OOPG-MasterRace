@@ -92,6 +92,10 @@ public class LevelBuilder {
         }
     }
 
+    /**
+     * Get builded leveld
+     * @return HashMap with builded levels
+     */
     public HashMap getBuildedLevels(){
         return this.levels;
     }
