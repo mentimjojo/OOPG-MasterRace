@@ -24,7 +24,9 @@ public class LevelBuilder {
     // HashMap with levels
     HashMap<String, Level> levels = new HashMap<>();
 
-
+    /**
+     * Constructor level builder
+     */
     public LevelBuilder() {
         // Load json files
         this.getLevelFiles();
