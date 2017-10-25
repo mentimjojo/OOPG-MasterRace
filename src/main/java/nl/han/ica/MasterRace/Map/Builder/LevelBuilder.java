@@ -46,6 +46,7 @@ public class LevelBuilder {
 
     /**
      * Create map from the level file
+     * TODO: Add power ups to readable
      */
     private void createMapFromLevelFile() {
         // For each level file

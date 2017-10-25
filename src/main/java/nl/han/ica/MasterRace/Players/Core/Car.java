@@ -14,8 +14,6 @@ import java.util.List;
  * Car class
  * @author T.Nijborg
  * @version 0.1
- *
- * TODO: Add location to spawn car after dead / outside map
  */
 public abstract class Car extends AnimatedSpriteObject implements ICollidableWithTiles {
 
