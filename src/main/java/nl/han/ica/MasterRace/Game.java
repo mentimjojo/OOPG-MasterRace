@@ -22,7 +22,7 @@ public class Game extends GameEngine {
 
     /**
      * Main for processing
-     * @param args
+     * @param args main args
      */
     public static void main(String[] args) {
         PApplet.main(new String[]{"nl.han.ica.MasterRace.Game"});
@@ -58,7 +58,7 @@ public class Game extends GameEngine {
     }
 
     /**
-     * Settingss
+     * Settings
      */
     private void settings(){
         // Set FTP
