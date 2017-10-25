@@ -103,7 +103,7 @@ public class LevelBuilder {
     }
 
     /**
-     * Read json file
+     * Read json file and return in string
      *
      * @param path to file
      * @param encoding how to encode
