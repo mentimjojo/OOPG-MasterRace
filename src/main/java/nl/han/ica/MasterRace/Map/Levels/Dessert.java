@@ -16,6 +16,10 @@ public class Dessert extends Level {
         super();
         // Set map
         this.setMap();
+        // Set positions p1
+        this.setPlayerSpawnPosition("p1", 50, 50);
+        // Set positions p2
+        this.setPlayerSpawnPosition("p2", 100, 50);
     }
 
     /**

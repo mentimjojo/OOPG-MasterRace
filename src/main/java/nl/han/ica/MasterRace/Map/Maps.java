@@ -1,9 +1,12 @@
 package nl.han.ica.MasterRace.Map;
 
+import nl.han.ica.MasterRace.Map.Core.Level;
 import nl.han.ica.MasterRace.Map.Levels.Dessert;
 import nl.han.ica.MasterRace.Map.Levels.Water;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 
+import javax.sound.sampled.LineEvent;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -17,7 +20,7 @@ public class Maps {
     /**
      * All Maps saved
      */
-    private HashMap<String, TileMap> levels = new HashMap<>();
+    private HashMap<String, Level> levels = new HashMap<>();
 
     /**
      * Constructor Maps
@@ -32,9 +35,9 @@ public class Maps {
      */
     private void setupMaps(){
         // Add Water
-        this.levels.put("Water", new Water().getMap());
+        this.levels.put("Water", new Water());
         // Add dessert map
-        this.levels.put("Dessert", new Dessert().getMap());
+        this.levels.put("Dessert", new Dessert());
     }
 
     /**
@@ -42,7 +45,7 @@ public class Maps {
      * @param levelName name of the level
      * @return TileMap
      */
-    public TileMap getSpecificMap(String levelName){
+    public Level getSpecificMap(String levelName){
         return this.levels.get(levelName);
     }
 
@@ -50,13 +53,13 @@ public class Maps {
      * Get Random Map
      * @return TileMap
      */
-    public TileMap getRandomMap(){
+    public Level getRandomMap(){
         // New random
         Random nextMap = new Random();
         // Values from maps
         Object[] levels = this.levels.values().toArray();
         // Return next map
-        return (TileMap) levels[nextMap.nextInt(this.levels.size())];
+        return (Level) levels[nextMap.nextInt(this.levels.size())];
     }
 
 }

@@ -1,5 +1,6 @@
 package nl.han.ica.MasterRace;
 
+import nl.han.ica.MasterRace.Map.Core.Level;
 import nl.han.ica.MasterRace.Map.Maps;
 import nl.han.ica.MasterRace.Players.Cars.DefaultBlue;
 import nl.han.ica.MasterRace.Players.Cars.DefaultOrange;
@@ -21,6 +22,12 @@ public class Game extends GameEngine {
     FPSCounter fps = new FPSCounter(150, 150);
 
     /**
+     * The map
+     */
+    private Maps nextMap = new Maps();
+    private Level selectedMap = nextMap.getRandomMap();
+
+    /**
      * Main for processing
      * @param args main args
      */
@@ -35,10 +42,8 @@ public class Game extends GameEngine {
     public void setupGame() {
         // Set settings
         this.settings();
-        // Map
-        Maps nextMap = new Maps();
         // Get a random map
-        tileMap = nextMap.getRandomMap();
+        tileMap = selectedMap.getMap();
         // Create view
         this.view();
         // Get cars
@@ -69,9 +74,8 @@ public class Game extends GameEngine {
      * Create cars
      */
     private void createCars(){
-        //addGameObject(cars, 100, 100);
-        addGameObject(new DefaultBlue(this), 50, 50);
-        addGameObject(new DefaultOrange(this), 100, 100);
+        addGameObject(new DefaultBlue(this), (Float) selectedMap.getPlayerSpawnPosition("p1").get(0), (Float) selectedMap.getPlayerSpawnPosition("p1").get(1));
+        addGameObject(new DefaultOrange(this), (Float) selectedMap.getPlayerSpawnPosition("p2").get(0), (Float) selectedMap.getPlayerSpawnPosition("p2").get(1));
     }
 
     /**
