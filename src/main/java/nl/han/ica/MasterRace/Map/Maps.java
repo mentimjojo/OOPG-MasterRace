@@ -1,5 +1,6 @@
 package nl.han.ica.MasterRace.Map;
 
+import nl.han.ica.MasterRace.Map.Levels.Dessert;
 import nl.han.ica.MasterRace.Map.Levels.Water;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 
@@ -30,8 +31,10 @@ public class Maps {
      * Setup maps
      */
     private void setupMaps(){
-        // Add desert
+        // Add Water
         this.levels.put("Water", new Water().getMap());
+        // Add dessert map
+        this.levels.put("Dessert", new Dessert().getMap());
     }
 
     /**

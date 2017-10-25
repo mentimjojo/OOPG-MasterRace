@@ -91,12 +91,15 @@ public class Tiles {
     private void setupEnvironment(){
         // First setup all default environment parts
         Sprite water_full = new Sprite(this.assetsPaths.get("environment") + "/water_full.png");
+        Sprite dessert_full = new Sprite(this.assetsPaths.get("environment") + "/sand_full.png");
 
         // Setup tile types
         TileType<EnvironmentTile> tile_water_full = new TileType<>(EnvironmentTile.class, water_full);
+        TileType<EnvironmentTile> tile_dessert_full = new TileType<>(EnvironmentTile.class, dessert_full);
 
         // Add to tiles ArrayList
         this.tiles.add(tile_water_full);
+        this.tiles.add(tile_dessert_full);
     }
 
 }
