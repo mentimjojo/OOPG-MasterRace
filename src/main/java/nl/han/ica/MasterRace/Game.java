@@ -4,14 +4,10 @@ import nl.han.ica.MasterRace.Map.Builder.Level;
 import nl.han.ica.MasterRace.Map.Maps;
 import nl.han.ica.MasterRace.Players.Cars.DefaultBlue;
 import nl.han.ica.MasterRace.Players.Cars.DefaultOrange;
-import nl.han.ica.OOPDProcessingEngineHAN.Dashboard.Dashboard;
 import nl.han.ica.OOPDProcessingEngineHAN.Dashboard.FPSCounter;
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
-import nl.han.ica.OOPDProcessingEngineHAN.Objects.TextObject;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
 import processing.core.PApplet;
-
-import javax.xml.soap.Text;
 
 /**
  * Main class
@@ -85,7 +81,7 @@ public class Game extends GameEngine {
             // Create cars
             this.setupCars();
         } else {
-            // TODO
+            // TODO add error text that map couldn't be loaded
         }
     }
 

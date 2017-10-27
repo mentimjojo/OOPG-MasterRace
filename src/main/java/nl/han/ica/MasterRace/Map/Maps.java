@@ -8,7 +8,7 @@ import java.util.Random;
 /**
  * The Maps builder
  * @author T.Nijborg
- * @version 0.1
+ * @version 0.2
  */
 public class Maps {
 
@@ -34,6 +34,8 @@ public class Maps {
      * Get specific map
      * @param levelName name of the level
      * @return TileMap
+     * TODO: Remove for assessment
+     * @deprecated is not used, remove for assessment
      */
     public Level getSpecificMap(String levelName){
         return this.levels.get(levelName);

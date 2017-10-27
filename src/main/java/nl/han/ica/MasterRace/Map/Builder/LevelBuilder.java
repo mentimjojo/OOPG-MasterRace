@@ -52,7 +52,6 @@ public class LevelBuilder {
      * - Name
      * - TileMap
      * - Player Spawn Positions
-     * - Power ups (TODO)
      *
      * TODO: Add power ups to readable
      */
