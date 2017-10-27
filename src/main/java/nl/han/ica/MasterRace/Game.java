@@ -4,13 +4,18 @@ import nl.han.ica.MasterRace.Map.Builder.Level;
 import nl.han.ica.MasterRace.Map.Maps;
 import nl.han.ica.MasterRace.Players.Cars.DefaultBlue;
 import nl.han.ica.MasterRace.Players.Cars.DefaultOrange;
+import nl.han.ica.OOPDProcessingEngineHAN.Dashboard.Dashboard;
 import nl.han.ica.OOPDProcessingEngineHAN.Dashboard.FPSCounter;
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
+import nl.han.ica.OOPDProcessingEngineHAN.Objects.TextObject;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
 import processing.core.PApplet;
 
+import javax.xml.soap.Text;
+
 /**
  * Main class
+ *
  * @author T.Nijborg
  * @version 0.2
  */
@@ -29,6 +34,7 @@ public class Game extends GameEngine {
 
     /**
      * Main for processing
+     *
      * @param args main args
      */
     public static void main(String[] args) {
@@ -40,24 +46,25 @@ public class Game extends GameEngine {
      */
     @Override
     public void setupGame() {
+        //System.out.println("hoi");
         // Set settings
         this.settings();
-        // Get a random map
-        tileMap = selectedMap.getMap();
         // Create view
         this.view();
-        // Get cars
-        this.createCars();
+        // Get Map
+        this.setupMap();
     }
 
     /**
      * Create view
      */
-    private void view(){
+    private void view() {
         // Create view
         View view = new View(1400, 700);
         // set view
         setView(view);
+        // Background white
+        background(541);
         // Set size
         size(1400, 700);
     }
@@ -65,15 +72,27 @@ public class Game extends GameEngine {
     /**
      * Settings
      */
-    private void settings(){
+    private void settings() {
         // Set FTP
         this.setGameSpeed(144);
+    }
+
+    // Setup MAP
+    private void setupMap() {
+        if (this.selectedMap != null) {
+            // Get the map
+            this.tileMap = selectedMap.getMap();
+            // Create cars
+            this.setupCars();
+        } else {
+            // TODO
+        }
     }
 
     /**
      * Create cars
      */
-    private void createCars(){
+    private void setupCars() {
         addGameObject(new DefaultBlue(this), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(1));
         addGameObject(new DefaultOrange(this), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(1));
     }

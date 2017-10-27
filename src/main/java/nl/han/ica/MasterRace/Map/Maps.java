@@ -44,12 +44,17 @@ public class Maps {
      * @return TileMap
      */
     public Level getRandomMap(){
-        // New random
-        Random nextMap = new Random();
-        // Values from maps
-        Object[] levels = this.levels.values().toArray();
-        // Return next map
-        return (Level) levels[nextMap.nextInt(this.levels.size())];
+        // Check if map exists
+        if(!this.levels.isEmpty()) {
+            // New random
+            Random nextMap = new Random();
+            // Values from maps
+            Object[] levels = this.levels.values().toArray();
+            // Return next map
+            return (Level) levels[nextMap.nextInt(this.levels.size())];
+        } else {
+            return null;
+        }
     }
 
 }

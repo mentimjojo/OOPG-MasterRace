@@ -1,5 +1,6 @@
 {
   "name": "Desert",
+  "enabled": false,
   "tileMap":[
     [0,0,10,10,10,0,0,0,0,0,0,10,10,10,10,10,10,10,10,10],
     [0,0,10,10,10,0,0,0,0,0,0,10,10,10,10,10,10,10,10,10],
@@ -15,5 +16,8 @@
   "playerSpawnPositions": [
     { "name": "player_1", "positions":[5, 5] },
     { "name": "player_2", "positions":[75, 5] }
-  ]
+  ],
+  "power_ups":{
+
+  }
 }
