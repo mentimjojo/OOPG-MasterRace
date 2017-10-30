@@ -81,7 +81,7 @@ public class Game extends GameEngine {
             // Create cars
             this.setupCars();
         } else {
-            // TODO add error text that map couldn't be loaded
+            // TODO implement dashboard error
         }
     }
 
