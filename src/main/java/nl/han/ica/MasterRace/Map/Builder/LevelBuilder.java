@@ -62,14 +62,13 @@ public class LevelBuilder {
 
     /**
      * Create map from the level file
-     * <p>
+     *
      * JSON parsers get's:
      * If map is enabled, if true only then get parsed.
      * - Name
      * - TileMap
      * - Player Spawn Positions
-     * <p>
-     * TODO: Add power ups to readable
+     * - Power ups
      */
     private void createMapFromLevelFile() {
         // For each level file

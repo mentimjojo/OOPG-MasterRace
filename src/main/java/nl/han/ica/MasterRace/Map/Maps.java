@@ -34,17 +34,6 @@ public class Maps {
     }
 
     /**
-     * Get specific map
-     * @param levelName name of the level
-     * @return TileMap
-     * TODO: Remove for assessment
-     * @deprecated is not used, remove for assessment
-     */
-    public Level getSpecificMap(String levelName){
-        return this.levels.get(levelName);
-    }
-
-    /**
      * Get Random Map
      * @return TileMap
      */
