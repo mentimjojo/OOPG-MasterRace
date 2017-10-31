@@ -4,6 +4,7 @@ import nl.han.ica.MasterRace.Map.Builder.Level;
 import nl.han.ica.MasterRace.Map.Maps;
 import nl.han.ica.MasterRace.Players.Cars.DefaultBlue;
 import nl.han.ica.MasterRace.Players.Cars.DefaultOrange;
+import nl.han.ica.MasterRace.Players.Core.Car;
 import nl.han.ica.OOPDProcessingEngineHAN.Dashboard.FPSCounter;
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
@@ -26,7 +27,11 @@ public class Game extends GameEngine {
      * The map
      */
     private Maps nextMap = new Maps();
-    private Level selectedMap = nextMap.getRandomMap();
+
+    /**
+     * Selected random map
+     */
+    private Level selectedMap;
 
     /**
      * Main for processing
@@ -43,6 +48,8 @@ public class Game extends GameEngine {
     @Override
     public void setupGame() {
         //System.out.println("hoi");
+        // Set current map
+        this.selectedMap = nextMap.getRandomMap();
         // Set settings
         this.settings();
         // Create view
@@ -85,12 +92,33 @@ public class Game extends GameEngine {
         }
     }
 
+    public void nextMap(){
+        // get next level
+        this.selectedMap = nextMap.getRandomMap();
+        // Delete game objects
+        this.deleteAllGameOBjects();
+        // Run setup map again
+        this.setupMap();
+        // Setup cars
+        this.setupCars();
+    }
+
     /**
      * Create cars
      */
     private void setupCars() {
+        // Add blue car
         addGameObject(new DefaultBlue(this), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(1));
+        // Add orange car
         addGameObject(new DefaultOrange(this), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(1));
+    }
+
+    /**
+     * Clear the map from all objects
+     */
+    private void clearMap(){
+        // Remove all game object
+        this.deleteAllGameOBjects();
     }
 
     /**

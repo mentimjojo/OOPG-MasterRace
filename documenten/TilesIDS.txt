@@ -7,5 +7,6 @@
 6 = track corner bottom left wall
 7 = track corner top left wall
 8 = track corner top right wall
-
-9 = water full
+9 = finish
+10 = water full
+11 = desert full

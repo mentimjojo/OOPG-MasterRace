@@ -1,6 +1,7 @@
 package nl.han.ica.MasterRace.Map.Builder;
 
 import nl.han.ica.MasterRace.Map.Tiles.EnvironmentTile;
+import nl.han.ica.MasterRace.Map.Tiles.FinishTile;
 import nl.han.ica.MasterRace.Map.Tiles.TrackTile;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
@@ -61,6 +62,7 @@ public class TileBuilder {
         Sprite track_corner_bottom_left = new Sprite(this.assetsPaths.get("trackParts") + "/track_corner_bottom_left.png");
         Sprite track_corner_top_left = new Sprite(this.assetsPaths.get("trackParts") + "/track_corner_top_left.png");
         Sprite track_corner_top_right = new Sprite(this.assetsPaths.get("trackParts") + "/track_corner_top_right.png");
+        Sprite track_finish = new Sprite(this.assetsPaths.get("trackParts") + "/track_finish.png");
 
         // Setup tile types
         TileType<TrackTile> tile_track_full = new TileType<>(TrackTile.class, track_full);
@@ -72,6 +74,7 @@ public class TileBuilder {
         TileType<TrackTile> tile_track_corner_bottom_left = new TileType<>(TrackTile.class, track_corner_bottom_left);
         TileType<TrackTile> tile_track_corner_top_left = new TileType<>(TrackTile.class, track_corner_top_left);
         TileType<TrackTile> tile_track_corner_top_right = new TileType<>(TrackTile.class, track_corner_top_right);
+        TileType<FinishTile> tile_track_finish = new TileType<>(FinishTile.class, track_finish);
 
         // Add to tiles ArrayList
         this.tiles.add(tile_track_full);
@@ -83,6 +86,7 @@ public class TileBuilder {
         this.tiles.add(tile_track_corner_bottom_left);
         this.tiles.add(tile_track_corner_top_left);
         this.tiles.add(tile_track_corner_top_right);
+        this.tiles.add(tile_track_finish);
     }
 
     /**

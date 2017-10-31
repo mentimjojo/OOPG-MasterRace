@@ -2,6 +2,7 @@ package nl.han.ica.MasterRace.Players.Core;
 
 import nl.han.ica.MasterRace.Game;
 import nl.han.ica.MasterRace.Map.Tiles.EnvironmentTile;
+import nl.han.ica.MasterRace.Map.Tiles.FinishTile;
 import nl.han.ica.OOPDProcessingEngineHAN.Collision.CollidedTile;
 import nl.han.ica.OOPDProcessingEngineHAN.Collision.ICollidableWithTiles;
 import nl.han.ica.OOPDProcessingEngineHAN.Exceptions.TileNotFoundException;
@@ -76,10 +77,12 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
      */
     @Override
     public void keyPressed(int keyCode, char key) {
+        // Check on key char
         for(Keys pressedKey : this.keysToPress){
             if(key == pressedKey.getKey()){
                 pressedKey.setPressed(true);
             }
+            // Check on keycode
             if(keyCode == pressedKey.getKeyCode()){
                 pressedKey.setPressed(true);
             }
@@ -93,10 +96,12 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
      */
     @Override
     public void keyReleased(int keyCode, char key) {
+        // Check on key char
         for(Keys pressedKey : this.keysToPress){
             if(key == pressedKey.getKey()){
                 pressedKey.setPressed(false);
             }
+            // Check on keycode
             if(keyCode == pressedKey.getKeyCode()){
                 pressedKey.setPressed(false);
             }
@@ -109,13 +114,26 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
      */
     @Override
     public void tileCollisionOccurred(List<CollidedTile> collidedTiles) {
+        // Check for environment tiles
         for (CollidedTile ct : collidedTiles) {
             if (ct.theTile instanceof EnvironmentTile) {
                 try {
+                    // Start again
                     setxSpeed(0);
                     setX(0);
                     setY(0);
                 } catch (TileNotFoundException e) {
+                    // Print error
+                    e.printStackTrace();
+                }
+            }
+            // Check for finish line
+            if (ct.theTile instanceof FinishTile) {
+                try {
+                    // Go to next map
+                    this.game.nextMap();
+                } catch (TileNotFoundException e) {
+                    // Print error
                     e.printStackTrace();
                 }
             }
