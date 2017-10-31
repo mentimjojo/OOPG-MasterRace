@@ -35,8 +35,13 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
     protected ArrayList<Keys> keysToPress = new ArrayList<>();
 
     /**
+     * Speed from the cars
+     */
+    public int speed = 2;
+
+    /**
      * Car constructor
-     * @param instanceGame
+     * @param instanceGame the instance of the game
      */
     public Car(Game instanceGame, String carPng){
         // Get the default car

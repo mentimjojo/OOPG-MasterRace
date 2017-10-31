@@ -5,13 +5,13 @@ import nl.han.ica.MasterRace.Players.Core.Car;
 import nl.han.ica.MasterRace.Players.Core.Keys;
 
 /**
- * Get default blue
+ * Get default blue player 1
  * @author T.Nijborg
  * @version 0.1
  */
-public class DefaultBlue extends Car {
+public class Player1 extends Car {
 
-    public DefaultBlue(Game game) {
+    public Player1(Game game) {
         // Set car
         super(game, "default_blue.png");
         // Set friction
@@ -39,7 +39,6 @@ public class DefaultBlue extends Car {
         }
 
         // Keys pressed
-        final int speed = 2;
         for(Keys pressedKey : this.keysToPress) {
             // Left
             if (pressedKey.getKeyCode() == 37 && pressedKey.getPressed()) {

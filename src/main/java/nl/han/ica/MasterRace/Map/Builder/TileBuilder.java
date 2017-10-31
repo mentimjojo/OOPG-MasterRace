@@ -46,6 +46,8 @@ public class TileBuilder {
         assetsPaths.put("trackParts", "src/assets/track");
         // Environment
         assetsPaths.put("environment", "src/assets/environment");
+        // power ups
+        assetsPaths.put("powerups", "src/assets/powerups");
     }
 
     /**

@@ -1,6 +1,6 @@
 {
   "name": "Water",
-  "enabled": true,
+  "enabled": false,
   "tileMap":[
     [7,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,8],
     [6,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,2],
@@ -18,6 +18,6 @@
     { "name": "player_2", "positions":[25, 70] }
   ],
   "power_ups":[
-    {"type": "speed", "chance":25, "positions":[75, 75]}
+    {"type": "speed", "chance": 1, "positions": [850, 650]}
   ]
 }

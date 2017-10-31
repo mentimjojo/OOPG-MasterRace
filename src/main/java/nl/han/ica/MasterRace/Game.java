@@ -2,9 +2,8 @@ package nl.han.ica.MasterRace;
 
 import nl.han.ica.MasterRace.Map.Builder.Level;
 import nl.han.ica.MasterRace.Map.Maps;
-import nl.han.ica.MasterRace.Players.Cars.DefaultBlue;
-import nl.han.ica.MasterRace.Players.Cars.DefaultOrange;
-import nl.han.ica.MasterRace.Players.Core.Car;
+import nl.han.ica.MasterRace.Players.Cars.Player1;
+import nl.han.ica.MasterRace.Players.Cars.Player2;
 import nl.han.ica.OOPDProcessingEngineHAN.Dashboard.FPSCounter;
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
@@ -26,12 +25,12 @@ public class Game extends GameEngine {
     /**
      * The map
      */
-    private Maps nextMap = new Maps();
+    private Maps nextMap = new Maps(this);
 
     /**
      * Selected random map
      */
-    private Level selectedMap;
+    public Level selectedMap;
 
     /**
      * Main for processing
@@ -85,8 +84,10 @@ public class Game extends GameEngine {
         if (this.selectedMap != null) {
             // Get the map
             this.tileMap = selectedMap.getMap();
-            // Create cars
-            this.setupCars();
+            // Setup player 1
+            this.setupPlayer1();
+            // Setup player 2
+            this.setupPlayer2();
         } else {
             // TODO implement dashboard error
         }
@@ -99,18 +100,26 @@ public class Game extends GameEngine {
         this.deleteAllGameOBjects();
         // Run setup map again
         this.setupMap();
-        // Setup cars
-        this.setupCars();
+        // Setup player 1
+        this.setupPlayer1();
+        // Setup player 2
+        this.setupPlayer2();
     }
 
     /**
-     * Create cars
+     * Setup player 1
      */
-    private void setupCars() {
+    public void setupPlayer1(){
         // Add blue car
-        addGameObject(new DefaultBlue(this), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(1));
+        addGameObject(new Player1(this), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(1));
+    }
+
+    /**
+     * Setup player 2
+     */
+    public void setupPlayer2(){
         // Add orange car
-        addGameObject(new DefaultOrange(this), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(1));
+        addGameObject(new Player2(this), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(1));
     }
 
     /**

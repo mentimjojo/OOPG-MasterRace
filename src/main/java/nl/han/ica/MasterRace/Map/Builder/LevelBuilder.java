@@ -1,5 +1,8 @@
 package nl.han.ica.MasterRace.Map.Builder;
 
+import nl.han.ica.MasterRace.Game;
+import nl.han.ica.MasterRace.Map.Powerups.Oil;
+import nl.han.ica.MasterRace.Map.Powerups.Speed;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,16 +21,27 @@ import java.util.HashMap;
  */
 public class LevelBuilder {
 
-    // Save json level files
+    /**
+     * Save all json level files
+     */
     private File[] levelFiles;
 
-    // HashMap with levels
+    /**
+     * Game instance
+     */
+    Game game;
+
+    /**
+     * HashMap with levels
+     */
     HashMap<String, Level> levels = new HashMap<>();
 
     /**
      * Constructor level builder
      */
-    public LevelBuilder() {
+    public LevelBuilder(Game game) {
+        // Set game
+        this.game = game;
         // Load json files
         this.getLevelFiles();
         // Create maps from level files
@@ -85,7 +99,7 @@ public class LevelBuilder {
                     }
                     // Create new level
                     Level newLevel = new Level();
-                    // Set map
+                    // Set tile map
                     newLevel.setMap(tileMap);
                     // Get coordinates
                     JSONArray playerSpawns = obj.getJSONArray("playerSpawnPositions");
@@ -95,6 +109,34 @@ public class LevelBuilder {
                         JSONObject spawn = playerSpawns.getJSONObject(i);
                         // Set player spawn positions
                         newLevel.setPlayerSpawnPosition(spawn.getString("name"), (int) spawn.getJSONArray("positions").get(0), (int) spawn.getJSONArray("positions").get(1));
+                    }
+                    // Get power ups
+                    JSONArray powerups = obj.getJSONArray("power_ups");
+                    // For each power up
+                    for(int i = 0; i < powerups.length(); i++){
+                        // Get power up object
+                        JSONObject powerup = powerups.getJSONObject(i);
+                        // Get random
+                        double randomChance = Math.random();
+                        // Check with type
+                        switch (powerup.getString("type")){
+                            // Powerup oil
+                            case "oil":
+                                // Check if needed to spawn
+                                if(randomChance < powerup.getDouble("chance")){
+                                    // Spawn here
+                                    game.addGameObject(new Oil(this.game), (int) powerup.getJSONArray("positions").get(0), (int) powerup.getJSONArray("positions").get(1));
+                                }
+                                break;
+                            // Powerup Speed
+                            case "speed":
+                                // Check if needed to spawn
+                                if(randomChance < powerup.getDouble("chance")){
+                                    // Spawn here
+                                    game.addGameObject(new Speed(this.game), (int) powerup.getJSONArray("positions").get(0), (int) powerup.getJSONArray("positions").get(1));
+                                }
+                                break;
+                        }
                     }
                     // Add to HashMap
                     this.levels.put(levelName, newLevel);

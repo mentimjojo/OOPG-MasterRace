@@ -1,5 +1,6 @@
 package nl.han.ica.MasterRace.Map;
 
+import nl.han.ica.MasterRace.Game;
 import nl.han.ica.MasterRace.Map.Builder.Level;
 import nl.han.ica.MasterRace.Map.Builder.LevelBuilder;
 import java.util.HashMap;
@@ -15,7 +16,7 @@ public class Maps {
     /**
      * OldLevel builder
      */
-    private LevelBuilder builder = new LevelBuilder();
+    private LevelBuilder builder;
 
     /**
      * All Maps saved
@@ -25,7 +26,9 @@ public class Maps {
     /**
      * Constructor Maps
      */
-    public Maps(){
+    public Maps(Game game){
+        // Get level builder
+        this.builder = new LevelBuilder(game);
         // Get builded levels
         this.levels = builder.getBuildedLevels();
     }

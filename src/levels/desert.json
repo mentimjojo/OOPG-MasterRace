@@ -17,7 +17,8 @@
     { "name": "player_1", "positions":[5, 5] },
     { "name": "player_2", "positions":[75, 5] }
   ],
-  "power_ups":{
-
-  }
+  "power_ups":[
+    {"type": "oil", "chance": 1, "positions": [850, 370]},
+    {"type": "speed", "chance": 0.25, "positions": [380, 370]}
+  ]
 }
