@@ -124,7 +124,9 @@ public class LevelBuilder {
     private String readFile(String path, Charset encoding)
             throws IOException
     {
+        // Read all bytes from path
         byte[] encoded = Files.readAllBytes(Paths.get(path));
+        // Return in string format
         return new String(encoded, encoding);
     }
 

@@ -95,7 +95,7 @@ public class Game extends GameEngine {
     public void nextMap(){
         // get next level
         this.selectedMap = nextMap.getRandomMap();
-        // Delete game objects
+        // Delete game objects (clear map)
         this.deleteAllGameOBjects();
         // Run setup map again
         this.setupMap();
@@ -111,14 +111,6 @@ public class Game extends GameEngine {
         addGameObject(new DefaultBlue(this), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(1));
         // Add orange car
         addGameObject(new DefaultOrange(this), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(1));
-    }
-
-    /**
-     * Clear the map from all objects
-     */
-    private void clearMap(){
-        // Remove all game object
-        this.deleteAllGameOBjects();
     }
 
     /**

@@ -41,15 +41,19 @@ public class DefaultBlue extends Car {
         // Keys pressed
         final int speed = 2;
         for(Keys pressedKey : this.keysToPress) {
+            // Left
             if (pressedKey.getKeyCode() == 37 && pressedKey.getPressed()) {
                 setDirectionSpeed(270, speed);
             }
+            // Top
             if (pressedKey.getKeyCode() == 38 && pressedKey.getPressed()) {
                 setDirectionSpeed(0, speed);
             }
+            // Right
             if (pressedKey.getKeyCode() == 39 && pressedKey.getPressed()) {
                 setDirectionSpeed(90, speed);
             }
+            // bottom
             if (pressedKey.getKeyCode() == 40 && pressedKey.getPressed()) {
                 setDirectionSpeed(180, speed);
             }

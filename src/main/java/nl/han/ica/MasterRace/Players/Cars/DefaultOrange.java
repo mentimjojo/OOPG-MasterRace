@@ -41,15 +41,19 @@ public class DefaultOrange extends Car {
         // Pressed key
         final int speed = 2;
         for(Keys pressedKey : this.keysToPress) {
+            // Left
             if (pressedKey.getKey() == 'a' && pressedKey.getPressed()) {
                 setDirectionSpeed(270, speed);
             }
+            // Top
             if (pressedKey.getKey() == 'w' && pressedKey.getPressed()) {
                 setDirectionSpeed(0, speed);
             }
+            // Right
             if (pressedKey.getKey() == 'd' && pressedKey.getPressed()) {
                 setDirectionSpeed(90, speed);
             }
+            // Bottom
             if (pressedKey.getKey() == 's' && pressedKey.getPressed()) {
                 setDirectionSpeed(180, speed);
             }
