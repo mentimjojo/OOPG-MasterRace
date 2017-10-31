@@ -88,6 +88,8 @@ public class Game extends GameEngine {
             this.setupPlayer1();
             // Setup player 2
             this.setupPlayer2();
+            // Spawn power ups
+            selectedMap.spawnPowerUps();
         } else {
             // TODO implement dashboard error
         }

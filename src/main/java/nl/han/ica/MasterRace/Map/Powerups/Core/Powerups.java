@@ -16,12 +16,69 @@ import java.util.List;
 public abstract class Powerups extends AnimatedSpriteObject implements ICollidableWithGameObjects {
 
     /**
+     * Chance to spawn
+     */
+    public double chance = 0;
+
+    /**
+     * X coordinates
+     */
+    private int xCoord = 0;
+
+    /**
+     * Y coordinates
+     */
+    private int yCoord = 0;
+
+    /**
      * Power up constructor
      * @param powerupPNG the powerup image (sprite)
      */
     public Powerups(String powerupPNG){
         // Run upper class
         super(new Sprite("src/assets/powerups/" + powerupPNG), 1);
+    }
+
+    /**
+     * Set chance
+     */
+    public void setChance(double chance){
+        // Set chance
+        this.chance = chance;
+    }
+
+    /**
+     * Set X coordinates
+     */
+    public void setXcoord(int x){
+        // Set x
+        this.xCoord = x;
+    }
+
+    /**
+     * Get x coord
+     * @return get x coord
+     */
+    public int getXCoord(){
+        // Get x
+        return this.xCoord;
+    }
+
+    /**
+     * Set Y coordinates
+     */
+    public void setYcoord(int y){
+        // Set y
+        this.yCoord = y;
+    }
+
+    /**
+     * Get y coord
+     * @return the y coord
+     */
+    public int getYCoord(){
+        // Get y
+        return this.yCoord;
     }
 
     /**

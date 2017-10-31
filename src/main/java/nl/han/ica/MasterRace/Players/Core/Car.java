@@ -3,6 +3,8 @@ package nl.han.ica.MasterRace.Players.Core;
 import nl.han.ica.MasterRace.Game;
 import nl.han.ica.MasterRace.Map.Tiles.EnvironmentTile;
 import nl.han.ica.MasterRace.Map.Tiles.FinishTile;
+import nl.han.ica.MasterRace.Players.Cars.Player1;
+import nl.han.ica.MasterRace.Players.Cars.Player2;
 import nl.han.ica.OOPDProcessingEngineHAN.Collision.CollidedTile;
 import nl.han.ica.OOPDProcessingEngineHAN.Collision.ICollidableWithTiles;
 import nl.han.ica.OOPDProcessingEngineHAN.Exceptions.TileNotFoundException;
@@ -125,8 +127,17 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
                 try {
                     // Start again
                     setxSpeed(0);
-                    setX(0);
-                    setY(0);
+                    // Remove object
+                    this.game.deleteGameObject(this);
+                    // Check player
+                    if(this instanceof Player1){
+                        // Add player 1 at start
+                        game.setupPlayer1();
+                    }
+                    if(this instanceof Player2){
+                        // Add player 2 at start
+                        game.setupPlayer2();
+                    }
                 } catch (TileNotFoundException e) {
                     // Print error
                     e.printStackTrace();

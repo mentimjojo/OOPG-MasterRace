@@ -1,5 +1,7 @@
 package nl.han.ica.MasterRace.Map.Builder;
 
+import nl.han.ica.MasterRace.Game;
+import nl.han.ica.MasterRace.Map.Powerups.Core.Powerups;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
 
@@ -13,18 +15,36 @@ import java.util.HashMap;
  */
 public class Level extends TileBuilder {
 
-    // TileMap map
+    /**
+     * Tile map
+     */
     protected TileMap map;
 
-    // Position
+    /**
+     * Game instace
+     */
+    private Game game;
+
+    /**
+     * Player spawn positions
+     */
     private HashMap<String, ArrayList<Float>> playerSpawnPosition = new HashMap<>();
 
     /**
-     * Give Game to level builder
+     * Power ups
      */
-    public Level(){
+    public ArrayList<Powerups> powerups = new ArrayList<>();
+
+    /**
+     * Give Game to level builder
+     *
+     * @param game game instance
+     */
+    public Level(Game game){
         // Run TileBuilder
         super();
+        // Set game
+        this.game = game;
     }
 
     /**
@@ -51,6 +71,19 @@ public class Level extends TileBuilder {
     public void setMap(int[][] tileMap){
         // Create new tilemap
         this.map = new TileMap(this.tileSize, this.tiles.toArray(new TileType[tiles.size()]), tileMap);
+    }
+
+    /**
+     * Set powerups
+     */
+    public void spawnPowerUps(){
+        for(Powerups powerup : this.powerups){
+            // Check if need to spawn
+            if(Math.random() < powerup.chance){
+                // Add game object (powerup)
+                this.game.addGameObject(powerup, powerup.getXCoord(), powerup.getYCoord());
+            }
+        }
     }
 
     /**
