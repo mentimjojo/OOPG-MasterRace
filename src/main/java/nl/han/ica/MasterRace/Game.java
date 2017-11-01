@@ -20,7 +20,7 @@ public class Game extends GameEngine {
     /**
      * FPS counter
      */
-    FPSCounter fps = new FPSCounter(150, 150);
+    private FPSCounter fps = new FPSCounter(150, 150);
 
     /**
      * The map

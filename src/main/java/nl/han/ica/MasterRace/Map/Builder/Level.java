@@ -18,7 +18,7 @@ public class Level extends TileBuilder {
     /**
      * Tile map
      */
-    protected TileMap map;
+    protected TileMap tileMap;
 
     /**
      * Game instace
@@ -28,7 +28,7 @@ public class Level extends TileBuilder {
     /**
      * Player spawn positions
      */
-    private HashMap<String, ArrayList<Float>> playerSpawnPosition = new HashMap<>();
+    private HashMap<String, ArrayList<Float>> playerSpawnPositions = new HashMap<>();
 
     /**
      * Power ups
@@ -53,7 +53,7 @@ public class Level extends TileBuilder {
      * @return TileMap
      */
     public TileMap getMap(){
-        return map;
+        return tileMap;
     }
 
     /**
@@ -62,7 +62,7 @@ public class Level extends TileBuilder {
      * @return the x / y position to spawn
      */
     public ArrayList getPlayerSpawnPosition(String player){
-        return this.playerSpawnPosition.get(player);
+        return this.playerSpawnPositions.get(player);
     }
 
     /**
@@ -70,7 +70,7 @@ public class Level extends TileBuilder {
      */
     public void setMap(int[][] tileMap){
         // Create new tilemap
-        this.map = new TileMap(this.tileSize, this.tiles.toArray(new TileType[tiles.size()]), tileMap);
+        this.tileMap = new TileMap(this.tileSize, this.tiles.toArray(new TileType[tiles.size()]), tileMap);
     }
 
     /**
@@ -99,7 +99,7 @@ public class Level extends TileBuilder {
         positions.add(x);
         positions.add(y);
         // Add player spawn position
-        this.playerSpawnPosition.put(player, positions);
+        this.playerSpawnPositions.put(player, positions);
     }
 
 

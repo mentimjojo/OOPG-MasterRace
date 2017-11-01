@@ -31,12 +31,12 @@ public class LevelBuilder {
     /**
      * Game instance
      */
-    Game game;
+    private Game game;
 
     /**
      * HashMap with levels
      */
-    HashMap<String, Level> levels = new HashMap<>();
+    private HashMap<String, Level> levels = new HashMap<>();
 
     /**
      * Constructor level builder

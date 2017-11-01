@@ -17,7 +17,7 @@ import java.util.HashMap;
 public class TileBuilder {
 
     // HashMap assets paths
-    protected HashMap<String, String> assetsPaths = new HashMap<>();
+    private HashMap<String, String> assetsPaths = new HashMap<>();
 
     // ArrayList tiles
     protected ArrayList<TileType> tiles = new ArrayList<>();
