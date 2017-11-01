@@ -4,6 +4,7 @@ import nl.han.ica.MasterRace.Map.Builder.Level;
 import nl.han.ica.MasterRace.Map.Maps;
 import nl.han.ica.MasterRace.Players.Cars.Player1;
 import nl.han.ica.MasterRace.Players.Cars.Player2;
+import nl.han.ica.MasterRace.Players.Core.Car;
 import nl.han.ica.OOPDProcessingEngineHAN.Dashboard.FPSCounter;
 import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
@@ -87,9 +88,9 @@ public class Game extends GameEngine {
             // Get the map
             this.tileMap = selectedMap.getMap();
             // Setup player 1
-            this.setupPlayer1();
+            this.setupPlayer1(new Player1(this));
             // Setup player 2
-            this.setupPlayer2();
+            this.setupPlayer2(new Player2(this));
             // Spawn power ups
             selectedMap.spawnPowerUps();
         }
@@ -106,25 +107,29 @@ public class Game extends GameEngine {
         // Run setup map again
         this.setupMap();
         // Setup player 1
-        this.setupPlayer1();
+        this.setupPlayer1(new Player1(this));
         // Setup player 2
-        this.setupPlayer2();
+        this.setupPlayer2(new Player2(this));
     }
 
     /**
      * Setup player 1
      */
-    public void setupPlayer1(){
+    public void setupPlayer1(Car player1){
+        // Reset speed
+        player1.speed = 2;
         // Add blue car
-        addGameObject(new Player1(this), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(1));
+        addGameObject(player1, (Float) selectedMap.getPlayerSpawnPosition("player_1").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_1").get(1));
     }
 
     /**
      * Setup player 2
      */
-    public void setupPlayer2(){
+    public void setupPlayer2(Car player2){
+        // Reset speed
+        player2.speed = 2;
         // Add orange car
-        addGameObject(new Player2(this), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(1));
+        addGameObject(player2, (Float) selectedMap.getPlayerSpawnPosition("player_2").get(0), (Float) selectedMap.getPlayerSpawnPosition("player_2").get(1));
     }
 
     /**
