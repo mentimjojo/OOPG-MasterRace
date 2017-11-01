@@ -152,6 +152,6 @@ public class Game extends GameEngine {
      */
     @Override
     public void update() {
-        fps.draw(this.g);
+        //fps.draw(this.g);
     }
 }
