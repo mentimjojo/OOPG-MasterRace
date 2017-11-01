@@ -18,7 +18,7 @@ public class Speed extends Powerups {
     /**
      * Game instance
      */
-    Game game;
+    private Game game;
 
     /**
      * Oil constructor

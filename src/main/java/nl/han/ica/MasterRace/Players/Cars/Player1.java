@@ -11,6 +11,10 @@ import nl.han.ica.MasterRace.Players.Core.Keys;
  */
 public class Player1 extends Car {
 
+    /**
+     * Player 1 constructor
+     * @param game instance
+     */
     public Player1(Game game) {
         // Set car
         super(game, "default_blue.png");
@@ -18,6 +22,9 @@ public class Player1 extends Car {
         setFriction(0.05F);
     }
 
+    /**
+     * On update
+     */
     @Override
     public void update() {
         // Car not out of bound(walls)

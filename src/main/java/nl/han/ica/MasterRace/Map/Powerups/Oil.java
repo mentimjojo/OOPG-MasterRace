@@ -18,7 +18,7 @@ public class Oil extends Powerups {
     /**
      * Game instance
      */
-    Game game;
+    private Game game;
 
     /**
      * Oil constructor

@@ -18,7 +18,7 @@ public abstract class Powerups extends AnimatedSpriteObject implements ICollidab
     /**
      * Chance to spawn
      */
-    public double chance = 0;
+    private double chance = 0;
 
     /**
      * X coordinates
@@ -45,6 +45,14 @@ public abstract class Powerups extends AnimatedSpriteObject implements ICollidab
     public void setChance(double chance){
         // Set chance
         this.chance = chance;
+    }
+
+    /**
+     * Get chance
+     * @return chance
+     */
+    public double getChance() {
+        return chance;
     }
 
     /**

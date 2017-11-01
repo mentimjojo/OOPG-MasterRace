@@ -79,7 +79,7 @@ public class Level extends TileBuilder {
     public void spawnPowerUps(){
         for(Powerups powerup : this.powerups){
             // Check if need to spawn
-            if(Math.random() < powerup.chance){
+            if(Math.random() < powerup.getChance()){
                 // Add game object (powerup)
                 this.game.addGameObject(powerup, powerup.getXCoord(), powerup.getYCoord());
             }
