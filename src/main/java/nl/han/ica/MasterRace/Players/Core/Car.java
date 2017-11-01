@@ -132,11 +132,11 @@ public abstract class Car extends AnimatedSpriteObject implements ICollidableWit
                     // Check player
                     if(this instanceof Player1){
                         // Add player 1 at start
-                        game.setupPlayer1(this);
+                        game.addPlayer1OnMap(this);
                     }
                     if(this instanceof Player2){
                         // Add player 2 at start
-                        game.setupPlayer2(this);
+                        game.addPlayer2OnMap(this);
                     }
                 } catch (TileNotFoundException e) {
                     // Print error

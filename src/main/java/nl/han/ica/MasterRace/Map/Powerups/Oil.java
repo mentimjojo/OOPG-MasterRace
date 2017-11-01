@@ -52,11 +52,11 @@ public class Oil extends Powerups {
                 // Check which car
                 if(object instanceof Player1) {
                     // Add player 1 at start
-                    game.setupPlayer1((Car) object);
+                    game.addPlayer1OnMap((Car) object);
                 }
                 if(object instanceof Player2){
                     // Add player 2 at start
-                    game.setupPlayer2((Car) object);
+                    game.addPlayer2OnMap((Car) object);
                 }
             }
         }

@@ -10,6 +10,8 @@ import nl.han.ica.OOPDProcessingEngineHAN.Engine.GameEngine;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
 import processing.core.PApplet;
 
+import java.util.HashMap;
+
 /**
  * Main class
  *
@@ -34,6 +36,11 @@ public class Game extends GameEngine {
     public Level selectedMap;
 
     /**
+     * Players
+     */
+    private HashMap<String, Car> players = new HashMap<>();
+
+    /**
      * Main for processing
      *
      * @param args main args
@@ -54,6 +61,8 @@ public class Game extends GameEngine {
         this.settings();
         // Create view
         this.view();
+        // Setup players
+        this.setupPlayers();
         // Get Map
         this.setupMap();
     }
@@ -81,6 +90,16 @@ public class Game extends GameEngine {
     }
 
     /**
+     * Setup players
+     */
+    private void setupPlayers(){
+        // Add player 1
+        this.players.put("player_1", new Player1(this));
+        // Add player 2
+        this.players.put("player_2", new Player2(this));
+    }
+
+    /**
      * Setup the map
      */
     private void setupMap() {
@@ -88,9 +107,9 @@ public class Game extends GameEngine {
             // Get the map
             this.tileMap = selectedMap.getMap();
             // Setup player 1
-            this.setupPlayer1(new Player1(this));
+            this.addPlayer1OnMap(this.players.get("player_1"));
             // Setup player 2
-            this.setupPlayer2(new Player2(this));
+            this.addPlayer2OnMap(this.players.get("player_2"));
             // Spawn power ups
             selectedMap.spawnPowerUps();
         }
@@ -106,16 +125,12 @@ public class Game extends GameEngine {
         this.deleteAllGameOBjects();
         // Run setup map again
         this.setupMap();
-        // Setup player 1
-        this.setupPlayer1(new Player1(this));
-        // Setup player 2
-        this.setupPlayer2(new Player2(this));
     }
 
     /**
      * Setup player 1
      */
-    public void setupPlayer1(Car player1){
+    public void addPlayer1OnMap(Car player1){
         // Reset speed
         player1.speed = 2;
         // Add blue car
@@ -125,7 +140,7 @@ public class Game extends GameEngine {
     /**
      * Setup player 2
      */
-    public void setupPlayer2(Car player2){
+    public void addPlayer2OnMap(Car player2){
         // Reset speed
         player2.speed = 2;
         // Add orange car

@@ -44,6 +44,7 @@ public class Player1 extends Car {
             setySpeed(0);
             setY(this.game.getHeight() - size);
         }
+        System.out.println(this.speed);
 
         // Keys pressed
         for(Keys pressedKey : this.keysToPress) {
