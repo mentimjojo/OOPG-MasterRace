@@ -97,15 +97,18 @@ public class TileBuilder {
     private void setupEnvironment(){
         // First setup all default environment parts
         Sprite water_full = new Sprite(this.assetsPaths.get("environment") + "/water_full.png");
-        Sprite dessert_full = new Sprite(this.assetsPaths.get("environment") + "/sand_full.png");
+        Sprite desert_full = new Sprite(this.assetsPaths.get("environment") + "/sand_full.png");
+        Sprite dirt_full = new Sprite(this.assetsPaths.get("environment") + "/dirt_full.png");
 
         // Setup tile types
         TileType<EnvironmentTile> tile_water_full = new TileType<>(EnvironmentTile.class, water_full);
-        TileType<EnvironmentTile> tile_dessert_full = new TileType<>(EnvironmentTile.class, dessert_full);
+        TileType<EnvironmentTile> tile_desert_full = new TileType<>(EnvironmentTile.class, desert_full);
+        TileType<EnvironmentTile> tile_dirt_full = new TileType<>(EnvironmentTile.class, dirt_full);
 
         // Add to tiles ArrayList
         this.tiles.add(tile_water_full);
-        this.tiles.add(tile_dessert_full);
+        this.tiles.add(tile_desert_full);
+        this.tiles.add(tile_dirt_full);
     }
 
 }
