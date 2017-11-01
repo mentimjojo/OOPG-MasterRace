@@ -54,7 +54,6 @@ public class Game extends GameEngine {
      */
     @Override
     public void setupGame() {
-        //System.out.println("hoi");
         // Set current map
         this.selectedMap = nextMap.getRandomMap();
         // Set settings
