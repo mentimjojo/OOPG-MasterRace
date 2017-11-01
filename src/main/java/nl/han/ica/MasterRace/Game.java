@@ -79,7 +79,9 @@ public class Game extends GameEngine {
         this.setGameSpeed(144);
     }
 
-    // Setup MAP
+    /**
+     * Setup the map
+     */
     private void setupMap() {
         if (this.selectedMap != null) {
             // Get the map
@@ -90,11 +92,12 @@ public class Game extends GameEngine {
             this.setupPlayer2();
             // Spawn power ups
             selectedMap.spawnPowerUps();
-        } else {
-            // TODO implement dashboard error
         }
     }
 
+    /**
+     * Go to the next map.
+     */
     public void nextMap(){
         // get next level
         this.selectedMap = nextMap.getRandomMap();
