@@ -18,6 +18,7 @@
     { "name": "player_2", "positions":[25, 70] }
   ],
   "power_ups":[
+    {"type": "oil", "chance": 0.10, "positions": [1350, 400]},
     {"type": "speed", "chance": 1, "positions": [850, 650]}
   ]
 }
